@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo/logo.png";
@@ -41,26 +42,56 @@ const Navitems = () => {
             {/* logo */}
             <div className="logo-search-acte">
               <div className="logo">
-              <Link to={"/"}>
-              <img src={logo} alt="" />
-              </Link>
+                <Link to={"/"}>
+                  <img src={logo} alt="" />
+                </Link>
               </div>
-
             </div>
 
             {/* menu area */}
             <div className="menu-area">
               <div className="menu">
-               <ul className={`lab-ul ${menuToggle ? "active" : ""}`}>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/shop">Shop</Link></li>
-                <li><Link to="/blog">Blog</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-               </ul>
+                <ul className={`lab-ul ${menuToggle ? "active" : ""}`}>
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/shop">Shop</Link>
+                  </li>
+                  <li>
+                    <Link to="/blog">Blog</Link>
+                  </li>
+                  <li>
+                    <Link to="/about">About</Link>
+                  </li>
+                  <li>
+                    <Link to="/contact">Contact</Link>
+                  </li>
+                </ul>
               </div>
-            </div>
 
+              {/* sign in and log in */}
+              <Link to="/sign-up" className="lab-btn me-3 d-none d-md-block">
+                Create Account
+              </Link>
+              <Link to="/login" className="d-none d-md-block">Login</Link>
+
+
+              {/* menu toggler */}
+              <div
+        className={`header-bar d-lg-none ${menuToggle ? "active" : ""}`}
+        onClick={() => setMenuToggle(!menuToggle)}
+      >
+              </div> 
+
+              {/* social toggler */}
+              <div className="ellepsis-bar d-md-none"
+              onClick={() => setSocialTogle(!socialToggle)}
+              >
+              <i className="icofont-info-square"></i>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
